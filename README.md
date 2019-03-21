@@ -1,6 +1,6 @@
 # gke-exec-credential
 
-A helper program allowing the `ExecCredential` system to be used authenticate to Google Kubernetes Engine.
+A helper program allowing the `ExecCredential` system to be used to authenticate to Google Kubernetes Engine.
 
 Traditionally, following instructions
 [here](https://cloud.google.com/kubernetes-engine/docs/tutorials/authenticating-to-cloud-platform#create_a_container_cluster)
@@ -45,7 +45,9 @@ users:
   user:
     exec:
       apiVersion: client.authentication.k8s.io/v1beta1
-      command: kubectl gke-exec-credential
+      command: kubectl
+      args:
+      - gke-exec-credential
 ```
 
 (If you pass any additional arguments, they will be sent as is to `gcloud`.)
